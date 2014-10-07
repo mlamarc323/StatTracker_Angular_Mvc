@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GolfStatTrackerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FacilityId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CourseTee">
+    <Key>
+      <PropertyRef Name="CourseId" />
+      <PropertyRef Name="TeeId" />
+    </Key>
+    <Property Name="CourseId" Type="int" Nullable="false" />
+    <Property Name="TeeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Facility">
+    <Key>
+      <PropertyRef Name="FacilityId" />
+    </Key>
+    <Property Name="FacilityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Golfer">
+    <Key>
+      <PropertyRef Name="GolferId" />
+    </Key>
+    <Property Name="GolferId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="varbinary" MaxLength="50" Nullable="false" />
+    <Property Name="Last_Name" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hole">
+    <Key>
+      <PropertyRef Name="HoleId" />
+    </Key>
+    <Property Name="HoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeeId" Type="int" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="Yardage" Type="int" />
+    <Property Name="Par" Type="int" />
+    <Property Name="Handicap" Type="int" />
+  </EntityType>
+  <EntityType Name="Round">
+    <Key>
+      <PropertyRef Name="RoundId" />
+    </Key>
+    <Property Name="RoundId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GolferId" Type="int" />
+    <Property Name="FacilityId" Type="int" Nullable="false" />
+    <Property Name="CourseId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Is_Official" Type="bit" Nullable="false" />
+    <Property Name="Number_Of_Holes" Type="bit" Nullable="false" />
+    <Property Name="HBH_Stats" Type="bit" Nullable="false" />
+    <Property Name="TotalScore" Type="int" />
+  </EntityType>
+  <EntityType Name="RoundDetail">
+    <Key>
+      <PropertyRef Name="RoundDetailId" />
+    </Key>
+    <Property Name="RoundDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoundId" Type="int" Nullable="false" />
+    <Property Name="HoleId" Type="int" Nullable="false" />
+    <Property Name="Score" Type="int" />
+    <Property Name="Putts" Type="int" />
+    <Property Name="GIR" Type="bit" />
+    <Property Name="FIR" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tee">
+    <Key>
+      <PropertyRef Name="TeeId" />
+    </Key>
+    <Property Name="TeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Slope" Type="tinyint" />
+    <Property Name="Rating" Type="decimal" Precision="3" Scale="1" />
+    <Property Name="Yardage" Type="tinyint" />
+  </EntityType>
+  <Association Name="FK_Course_CourseTee">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="CourseTee" Type="Self.CourseTee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="CourseTee">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Course_Facility">
+    <End Role="Facility" Type="Self.Facility" Multiplicity="0..1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facility">
+        <PropertyRef Name="FacilityId" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="FacilityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hole_Tee">
+    <End Role="Tee" Type="Self.Tee" Multiplicity="1" />
+    <End Role="Hole" Type="Self.Hole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tee">
+        <PropertyRef Name="TeeId" />
+      </Principal>
+      <Dependent Role="Hole">
+        <PropertyRef Name="TeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoundDetail_Round">
+    <End Role="Round" Type="Self.Round" Multiplicity="1" />
+    <End Role="RoundDetail" Type="Self.RoundDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Round">
+        <PropertyRef Name="RoundId" />
+      </Principal>
+      <Dependent Role="RoundDetail">
+        <PropertyRef Name="RoundId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tee_CourseTee">
+    <End Role="Tee" Type="Self.Tee" Multiplicity="1" />
+    <End Role="CourseTee" Type="Self.CourseTee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tee">
+        <PropertyRef Name="TeeId" />
+      </Principal>
+      <Dependent Role="CourseTee">
+        <PropertyRef Name="TeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GolfStatTrackerModelStoreContainer">
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseTee" EntityType="Self.CourseTee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facility" EntityType="Self.Facility" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Golfer" EntityType="Self.Golfer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hole" EntityType="Self.Hole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Round" EntityType="Self.Round" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoundDetail" EntityType="Self.RoundDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tee" EntityType="Self.Tee" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Course_CourseTee" Association="Self.FK_Course_CourseTee">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="CourseTee" EntitySet="CourseTee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Course_Facility" Association="Self.FK_Course_Facility">
+      <End Role="Facility" EntitySet="Facility" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hole_Tee" Association="Self.FK_Hole_Tee">
+      <End Role="Tee" EntitySet="Tee" />
+      <End Role="Hole" EntitySet="Hole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoundDetail_Round" Association="Self.FK_RoundDetail_Round">
+      <End Role="Round" EntitySet="Round" />
+      <End Role="RoundDetail" EntitySet="RoundDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tee_CourseTee" Association="Self.FK_Tee_CourseTee">
+      <End Role="Tee" EntitySet="Tee" />
+      <End Role="CourseTee" EntitySet="CourseTee" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

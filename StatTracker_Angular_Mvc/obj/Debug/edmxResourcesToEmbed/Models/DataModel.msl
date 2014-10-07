@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GolfStatTrackerModelStoreContainer" CdmEntityContainer="GolfStatTrackerEntities">
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="GolfStatTrackerModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facilities">
+      <EntityTypeMapping TypeName="GolfStatTrackerModel.Facility">
+        <MappingFragment StoreEntitySet="Facility">
+          <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Golfers">
+      <EntityTypeMapping TypeName="GolfStatTrackerModel.Golfer">
+        <MappingFragment StoreEntitySet="Golfer">
+          <ScalarProperty Name="GolferId" ColumnName="GolferId" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Holes">
+      <EntityTypeMapping TypeName="GolfStatTrackerModel.Hole">
+        <MappingFragment StoreEntitySet="Hole">
+          <ScalarProperty Name="HoleId" ColumnName="HoleId" />
+          <ScalarProperty Name="TeeId" ColumnName="TeeId" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Yardage" ColumnName="Yardage" />
+          <ScalarProperty Name="Par" ColumnName="Par" />
+          <ScalarProperty Name="Handicap" ColumnName="Handicap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rounds">
+      <EntityTypeMapping TypeName="GolfStatTrackerModel.Round">
+        <MappingFragment StoreEntitySet="Round">
+          <ScalarProperty Name="RoundId" ColumnName="RoundId" />
+          <ScalarProperty Name="GolferId" ColumnName="GolferId" />
+          <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Is_Official" ColumnName="Is_Official" />
+          <ScalarProperty Name="Number_Of_Holes" ColumnName="Number_Of_Holes" />
+          <ScalarProperty Name="HBH_Stats" ColumnName="HBH_Stats" />
+          <ScalarProperty Name="TotalScore" ColumnName="TotalScore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoundDetails">
+      <EntityTypeMapping TypeName="GolfStatTrackerModel.RoundDetail">
+        <MappingFragment StoreEntitySet="RoundDetail">
+          <ScalarProperty Name="RoundDetailId" ColumnName="RoundDetailId" />
+          <ScalarProperty Name="RoundId" ColumnName="RoundId" />
+          <ScalarProperty Name="HoleId" ColumnName="HoleId" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Putts" ColumnName="Putts" />
+          <ScalarProperty Name="GIR" ColumnName="GIR" />
+          <ScalarProperty Name="FIR" ColumnName="FIR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tees">
+      <EntityTypeMapping TypeName="GolfStatTrackerModel.Tee">
+        <MappingFragment StoreEntitySet="Tee">
+          <ScalarProperty Name="TeeId" ColumnName="TeeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Slope" ColumnName="Slope" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Yardage" ColumnName="Yardage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CourseTee" TypeName="GolfStatTrackerModel.CourseTee" StoreEntitySet="CourseTee">
+      <EndProperty Name="Course">
+        <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+      </EndProperty>
+      <EndProperty Name="Tee">
+        <ScalarProperty Name="TeeId" ColumnName="TeeId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

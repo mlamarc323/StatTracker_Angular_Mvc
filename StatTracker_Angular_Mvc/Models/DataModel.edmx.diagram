@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6c8a53e3c193472191f39059b719e5a1" Name="Diagram1">
+        <EntityTypeShape EntityType="GolfStatTrackerModel.Course" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfStatTrackerModel.Facility" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfStatTrackerModel.Golfer" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfStatTrackerModel.Hole" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfStatTrackerModel.Round" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfStatTrackerModel.RoundDetail" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfStatTrackerModel.Tee" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="GolfStatTrackerModel.FK_Course_Facility" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfStatTrackerModel.FK_Hole_Tee" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfStatTrackerModel.FK_RoundDetail_Round" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfStatTrackerModel.CourseTee" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
