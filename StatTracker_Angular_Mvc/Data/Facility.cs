@@ -15,6 +15,8 @@ namespace StatTracker_Angular_Mvc.Data
         public int FacilityId { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<Course> Courses { get; set; }
+         public ICollection<Course> Courses { get; set; }
+         //public virtual ICollection<Tee> Tees { get; set; }
+         //public virtual ICollection<Hole> Holes { get; set; }
     }
 }

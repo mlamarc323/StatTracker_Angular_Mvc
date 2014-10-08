@@ -1,0 +1,67 @@
+﻿
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav"></ul>
+        </div>
+    </div>
+    <div ng-controller="FacilitiesController">
+        <hr />
+        <div>
+            <a href="#/newFacility">Add Facility</a>
+        </div>
+        <ul class="thumbnails">
+            <li ng-repeat="facility in facilities">
+                <div class="row facility">
+                    <div class="well span9">
+                        <h4 ng-click="showCourseDetails = ! showCourseDetails" class="well-title">{{facility.name}} <a style="float: right" ng-click="deleteFacility(facility)">Remove</a></h4>
+                        <br />
+                        <div ng-class="{ 'hidden': ! showCourseDetails }">
+                            <ul class="thumbnails">
+                                <li ng-repeat="course in facility.courses">
+                                    <div class="row courses">
+                                        <div class="well span9">
+                                            <h6 ng-click="showTeeDetails = ! showTeeDetails" class="well-title">{{course.name}}</h6>
+                                            <br />
+                                            <ul ng-class="{ 'hidden': ! showTeeDetails }" class="thumbnails">
+                                                <li ng-repeat="tee in course.tees">
+                                                    <div class="row tee">
+                                                        <div class="well span9">
+                                                            <h6 ng-click="showHoleDetails = ! showHoleDetails" class="well-title">{{tee.name}}</h6>
+                                                            <br />
+                                                            <table ng-class="{ 'hidden': ! showHoleDetails }">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Hole Num</th>
+                                                                        <th>Yardage</th>
+                                                                        <th>Par</th>
+                                                                        <th>Handicap</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr ng-repeat="hole in tee.holes">
+
+                                                                        <td>{{ hole.number}}</td>
+                                                                        <td>{{ hole.yardage}}</td>
+                                                                        <td>{{ hole.par}}</td>
+                                                                        <td>{{ hole.handicap}}</td>
+
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+

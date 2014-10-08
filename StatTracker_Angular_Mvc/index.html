@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html lang="en" ng-app="statTrackerApp">
+<head>
+    <meta charset="utf-8">
+    <title>StatTracker</title>
+    <link href="app/css/app.css" rel="stylesheet" />
+    <link href="app/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#/facilities">Facilities</a></li>
+        <li><a href="#/view2">view2</a></li>
+    </ul>
+    <div ng-view></div>
+
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    -->
+    <script src="app/lib/jquery.min.js"></script>
+    <script src="app/lib/bootstrap.js"></script>
+    <script src="app/lib/bootstrap.min.js"></script>
+    <script src="app/lib/angular/angular.js"></script>
+    <script src="app/lib/angular/angular-sanitize.js"></script>
+    <script src="app/js/app.js"></script>
+    <script src="app/js/Controllers/FacilitiesController.js"></script>
+    <script src="app/lib/angular/angular-ui-router.min.js"></script>
+</body>
+</html>

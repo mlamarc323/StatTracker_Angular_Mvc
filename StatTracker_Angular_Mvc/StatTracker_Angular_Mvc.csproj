@@ -205,6 +205,8 @@
     <Compile Include="Data\Course.cs" />
     <Compile Include="Data\DataModelContext.cs" />
     <Compile Include="Data\Facility.cs" />
+    <Compile Include="Data\Hole.cs" />
+    <Compile Include="Data\Tee.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,11 +219,11 @@
     <Content Include="app\css\.gitignore" />
     <Content Include="app\css\app.css" />
     <Content Include="app\css\bootstrap.min.css" />
-    <Content Include="app\Facilities.html" />
+    <Content Include="app\partials\Facilities.html" />
     <Content Include="app\Facility.html" />
     <Content Include="app\img\.gitignore" />
     <Content Include="app\index-async.html" />
-    <Content Include="app\index.html" />
+    <Content Include="index.html" />
     <Content Include="app\js\app.js" />
     <Content Include="app\js\Controllers\FacilitiesController.js" />
     <Content Include="app\js\Controllers\FacilityController.js" />
@@ -235,12 +237,15 @@
     <Content Include="app\lib\angular\angular-resource.min.js" />
     <Content Include="app\lib\angular\angular-sanitize.js" />
     <Content Include="app\lib\angular\angular-sanitize.min.js" />
+    <Content Include="app\lib\angular\angular-ui-router.min.js" />
     <Content Include="app\lib\angular\angular.js" />
     <Content Include="app\lib\angular\angular.min.js" />
     <Content Include="app\lib\angular\version.txt" />
     <Content Include="app\lib\bootstrap.js" />
     <Content Include="app\lib\bootstrap.min.js" />
     <Content Include="app\lib\jquery.min.js" />
+    <Content Include="app\partials\facility-add.html" />
+    <Content Include="app\partials\_facility-form.html" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

@@ -18,25 +18,57 @@ namespace StatTracker_Angular_Mvc.Controllers
             _repo = repo;
         }
 
-        public IQueryable<Facility> Get(bool includeCourses = false)
+        public IEnumerable<Facility> Get(bool includeCourses = false, bool includeEverything = false)
         {
-            IQueryable<Facility> results;
-            if (includeCourses == true)
+            IEnumerable<Facility> results;
+            if (includeCourses)
             {
                 results = _repo.GetFacilitiesWithCourses();
+            }
+            else if (includeEverything)
+            {
+                results = _repo.GetFacilitiesWithEverything();
             }
             else
             {
                 results = _repo.GetFacilities();
             }
-            return results;
+
+            IEnumerable<Facility> results2;
+            results2 = results.ToList();
+
+            return results2;
         }
+
+
 
         public IEnumerable<Facility> Get(int id)
         {
             IQueryable<Facility> results;
             results = _repo.GetFacility(id);
             return results;
+        }
+
+        public HttpResponseMessage Post([FromBody]Facility newFacility)
+        {
+            if (_repo.AddFacility(newFacility) &&
+                _repo.Save())
+            {
+                return Request.CreateResponse();
+            }
+
+            return Request.CreateResponse(HttpStatusCode.BadRequest);
+        }
+
+        public HttpResponseMessage Delete(int id)
+        {
+            if (_repo.DeleteFacility(id) &&
+                _repo.Save())
+            {
+                return Request.CreateResponse();
+            }
+
+            return Request.CreateResponse(HttpStatusCode.BadRequest);
         }
     }
 }
