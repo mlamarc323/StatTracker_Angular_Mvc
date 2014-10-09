@@ -24,8 +24,6 @@ namespace StatTracker_Angular_Mvc
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
-
-            Database.SetInitializer<Data.DataModelContext>(null);
         }
     }
 }

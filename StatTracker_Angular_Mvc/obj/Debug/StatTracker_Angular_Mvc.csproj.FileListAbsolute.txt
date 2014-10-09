@@ -15,9 +15,6 @@ C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Microsoft.We
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Microsoft.Web.WebPages.OAuth.dll
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Newtonsoft.Json.dll
-C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Ninject.dll
-C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Ninject.Web.Common.dll
-C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Ninject.Web.Mvc.dll
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\System.Net.Http.Formatting.dll
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\System.Spatial.dll
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\System.Web.Helpers.dll
@@ -30,14 +27,9 @@ C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\System.Web.R
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\System.Web.WebPages.Deployment.dll
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\System.Web.WebPages.dll
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\System.Web.WebPages.Razor.dll
-C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\WebActivatorEx.dll
-C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\WebApiContrib.IoC.Ninject.dll
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\WebGrease.dll
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\WebMatrix.Data.dll
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\WebMatrix.WebData.dll
-C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Ninject.xml
-C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Ninject.Web.Common.xml
-C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Ninject.Web.Mvc.xml
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\EntityFramework.xml
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\Newtonsoft.Json.xml
 C:\Projects_Git\StatTracker_Angular_Mvc\StatTracker_Angular_Mvc\bin\System.Net.Http.Formatting.xml

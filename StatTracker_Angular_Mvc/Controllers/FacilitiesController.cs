@@ -13,9 +13,9 @@ namespace StatTracker_Angular_Mvc.Controllers
     {
         private DataModelRepository _repo;
 
-        public FacilitiesController(DataModelRepository repo)
+        public FacilitiesController()
         {
-            _repo = repo;
+            _repo = new DataModelRepository(new DataModelContext());
         }
 
         public IEnumerable<Facility> Get(bool includeCourses = false, bool includeEverything = false)

@@ -12,6 +12,7 @@ namespace StatTracker_Angular_Mvc.Data
         public DataModelContext()
             : base("name=GolfStatTrackerEntities")
         {
+            Database.SetInitializer<Data.DataModelContext>(null);
         }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
