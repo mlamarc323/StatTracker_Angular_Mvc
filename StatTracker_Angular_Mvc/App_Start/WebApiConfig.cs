@@ -11,6 +11,10 @@ namespace StatTracker_Angular_Mvc
     {
         public static void Register(HttpConfiguration config)
         {
+
+            // Web API routes
+            config.MapHttpAttributeRoutes();
+
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
             jsonFormatter.SerializerSettings.ContractResolver =
               new CamelCasePropertyNamesContractResolver();

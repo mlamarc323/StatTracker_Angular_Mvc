@@ -5,6 +5,7 @@ using System.Net;
 using System.Web;
 using System.Data.Entity;
 using System.Web.Http;
+using StatTracker_Angular_Mvc.Data.Models;
 
 namespace StatTracker_Angular_Mvc.Data
 {

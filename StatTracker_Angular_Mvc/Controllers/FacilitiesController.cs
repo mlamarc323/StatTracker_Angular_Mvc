@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using StatTracker_Angular_Mvc.Data;
+using StatTracker_Angular_Mvc.Data.Models;
 using StatTracker_Angular_Mvc.Models;
 
 namespace StatTracker_Angular_Mvc.Controllers
@@ -18,6 +19,7 @@ namespace StatTracker_Angular_Mvc.Controllers
             _repo = new DataModelRepository(new DataModelContext());
         }
 
+        [Authorize]
         public IEnumerable<Facility> Get(bool includeCourses = false, bool includeEverything = false)
         {
             IEnumerable<Facility> results;

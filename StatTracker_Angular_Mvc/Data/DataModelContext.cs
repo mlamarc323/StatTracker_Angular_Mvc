@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
+using StatTracker_Angular_Mvc.Data.Models;
 
 namespace StatTracker_Angular_Mvc.Data
 {
@@ -12,7 +13,6 @@ namespace StatTracker_Angular_Mvc.Data
         public DataModelContext()
             : base("name=GolfStatTrackerEntities")
         {
-            Database.SetInitializer<Data.DataModelContext>(null);
         }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
