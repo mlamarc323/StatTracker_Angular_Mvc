@@ -18,6 +18,7 @@ namespace StatTracker_Angular_Mvc.Data
             _ctx = ctx;
         }
 
+        #region Facilities
         public IQueryable<Facility> GetFacilities()
         {
             return _ctx.Facilities;
@@ -75,6 +76,30 @@ namespace StatTracker_Angular_Mvc.Data
             }
         }
 
+        #endregion
+
+        #region Rounds
+        public IQueryable<Round> GetRounds()
+        {
+            return _ctx.Rounds;
+        }
+
+        public bool AddRound(Round newRound)
+        {
+            try
+            {
+                _ctx.Rounds.Add(newRound);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // TODO log this error
+                return false;
+            }
+        }
+
+        #endregion
+
         public bool Save()
         {
             try
@@ -88,5 +113,30 @@ namespace StatTracker_Angular_Mvc.Data
             }
         }
 
+
+        internal IEnumerable<Course> GetCourses()
+        {
+            return _ctx.Courses;
+        }
+
+        internal IEnumerable<Course> GetCoursesForFacility(int facilityId)
+        {
+            return _ctx.Courses.Where(c => c.FacilityId == facilityId);
+        }
+
+        internal IEnumerable<Tee> GetTees()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal IEnumerable<Tee> GetTeesForCourses(int courseId)
+        {
+            return _ctx.Tees.Where(t => t.CourseId == courseId);
+        }
+
+        internal IEnumerable<Course> GetCourseById(int id)
+        {
+            return _ctx.Courses.Where(c => c.CourseId == id);
+        }
     }
 }

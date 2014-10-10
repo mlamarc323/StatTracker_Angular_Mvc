@@ -1,0 +1,23 @@
+﻿<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav"></ul>
+        </div>
+    </div>
+    <div ng-controller="roundController">
+        <hr />
+        <div>
+            <a href="#/newRound">Add Round</a>
+        </div>
+        <ul class="thumbnails">
+            <li ng-repeat="round in rounds">
+                <div class="row facility">
+                    <div class="well span9">
+                        <h4 ng-click="showCourseDetails = ! showCourseDetails" class="well-title">{{facility.name}} <a style="float: right" ng-click="deleteFacility(facility)">Remove</a></h4>
+                        <br />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

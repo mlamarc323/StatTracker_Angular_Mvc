@@ -1,0 +1,60 @@
+﻿<div class="form-group">
+    <h2>Round</h2>
+    <div class="col-sm-10">
+        <table>
+            <tr>
+                <td><label for="facility" class="col-sm-2 control-label">Facility: </label></td>
+                <td><select ng-change="getCourses(newRound.facilityId)" ng-model="newRound.facilityId" class="form-control" id="facility" required="required">
+                        <option ng-repeat="facility in facilities" value="{{facility.facilityId}}">{{facility.name}}</option>
+                    </select><br /></td>
+            </tr>
+            <tr>
+                <td><label for="course" class="col-sm-2 control-label">Course: </label></td>
+                <td><select ng-change="getTees(newRound.courseId)" ng-model="newRound.courseId" class="form-control" id="course" required="required">
+                        <option ng-repeat="course in courses" value="{{course.courseId}}">{{course.name}}</option>
+                    </select><br /></td>
+            </tr>
+            <tr>
+                <td><label for="tee" class="col-sm-2 control-label">Tees: </label></td>
+                <td><select ng-model="newRound.teeId" class="form-control" id="tee" required="required">
+                        <option ng-repeat="tee in tees" value="{{tee.teeId}}">{{tee.name}}</option>
+                    </select><br /></td>
+            </tr>
+            <tr>
+                <td><label for="date" class="col-sm-2 control-label">Date: </label></td>
+                <td><input type="date" ng-model="newRound.date" class="form-control" id="date" required="required" placeholder="Enter date." /></td>
+            </tr>
+            <tr>
+                <td><label for="official" class="col-sm-2 control-label">Is Official: </label></td>
+                <td><input type="checkbox" ng-model="newRound.isOfficial" class="form-control" id="official" /><br /></td>
+            </tr>
+            <tr>
+                <td><label for="holes" class="col-sm-2 control-label">Holes: </label></td>
+                <td><input type="checkbox" ng-model="newRound.holes" class="form-control" id="holes" /><br /></td>
+            </tr>
+            <tr>
+                <td><label for="hbh" class="col-sm-2 control-label">Hole by Hole: </label></td>
+                <td><input type="checkbox" ng-model="newRound.hbh" class="form-control" id="hbh" /><br /></td>
+            </tr>
+            <tr>
+                <td><label for="score" class="col-sm-2 control-label">Total Score: </label></td>
+                <td><input type="text" ng-model="newRound.TotalScore" class="form-control" id="score" /></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" class="btn btn-primary" value="Save Round" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+
+</div>

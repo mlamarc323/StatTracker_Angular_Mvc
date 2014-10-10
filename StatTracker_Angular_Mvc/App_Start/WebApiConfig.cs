@@ -20,6 +20,18 @@ namespace StatTracker_Angular_Mvc
               new CamelCasePropertyNamesContractResolver();
 
             config.Routes.MapHttpRoute(
+                name: "courses",
+                routeTemplate: "api/facilities/{facilityId}/courses",
+                defaults: new { facilityId = RouteParameter.Optional, controller = "Facilities", action = "Courses"}
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "tees",
+                routeTemplate: "api/course/{courseId}/tees",
+                defaults: new { courseId = RouteParameter.Optional, controller = "Course", action = "Tees" }
+            );
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }

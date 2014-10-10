@@ -19,7 +19,7 @@ namespace StatTracker_Angular_Mvc.Controllers
             _repo = new DataModelRepository(new DataModelContext());
         }
 
-        [Authorize]
+        //[Authorize]
         public IEnumerable<Facility> Get(bool includeCourses = false, bool includeEverything = false)
         {
             IEnumerable<Facility> results;
@@ -40,6 +40,14 @@ namespace StatTracker_Angular_Mvc.Controllers
             results2 = results.ToList();
 
             return results2;
+        }
+
+        [HttpGet]
+        public IEnumerable<Course> Courses(int facilityId)
+        {
+            IEnumerable<Course> results;
+            results = _repo.GetCoursesForFacility(facilityId);
+            return results;
         }
 
 
