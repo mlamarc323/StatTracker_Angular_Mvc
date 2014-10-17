@@ -11,10 +11,24 @@
         </div>
         <ul class="thumbnails">
             <li ng-repeat="round in rounds">
-                <div class="row facility">
+                <div class="row round">
                     <div class="well span9">
-                        <h4 ng-click="showCourseDetails = ! showCourseDetails" class="well-title">{{facility.name}} <a style="float: right" ng-click="deleteFacility(facility)">Remove</a></h4>
-                        <br />
+                        <h4 class="well-title" ng-click="showRoundDetails = ! showRoundDetails">
+                            <!--ng-click="getRoundDetailsById(round.roundId)"-->
+                            Round ID: {{round.roundId}} <a style="float: right" ng-click="deleteFacility(round)">Remove</a>
+                        </h4>
+                        <div ng-class="{ 'hidden': ! showRoundDetails }">
+                            <ul class="thumbnails" style="list-style: none">
+                                <li ng-repeat="roundDetail in round.roundDetails">
+                                    <div style="list-style: none">
+                                        <div class="well span9">
+                                            <h4 class="well-title">Round Detail ID: {{roundDetail.roundDetailId}} <a style="float: right"></a></h4>
+                                            <br />
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </li>
