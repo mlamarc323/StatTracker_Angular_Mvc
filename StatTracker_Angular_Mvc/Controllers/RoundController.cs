@@ -36,5 +36,16 @@ namespace StatTracker_Angular_Mvc.Controllers
             return Request.CreateResponse(HttpStatusCode.BadRequest);
         }
 
+        public HttpResponseMessage Delete(int id)
+        {
+            if (_repo.DeleteRound(id) &&
+                _repo.Save())
+            {
+                return Request.CreateResponse();
+            }
+
+            return Request.CreateResponse(HttpStatusCode.BadRequest);
+        }
+
     }
 }

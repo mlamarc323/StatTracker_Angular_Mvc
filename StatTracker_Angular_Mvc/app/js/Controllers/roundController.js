@@ -99,6 +99,20 @@ statTrackerApp.controller('roundController',
           });
         };
 
+        $scope.deleteRound = function (round) {
+            if (confirm("Are you sure you want to delete this round \n\n '" + round.roundId + "'")) {
+                $http.delete('/api/round/' + round.roundId).then(function () {
+                    // Successful
+                    //angular.copy(result.data, $scope.facilities);
+                    $route.reload();
+                },
+                    function () {
+                        // Error
+                        alert("Could not delete round.");
+                    });
+            }
+        };
+
         $scope.getRoundDetails = function () {
             $http.get("/api/roundDetail/" + $scope.savedRound.roundId)
                 .then(function (result) {

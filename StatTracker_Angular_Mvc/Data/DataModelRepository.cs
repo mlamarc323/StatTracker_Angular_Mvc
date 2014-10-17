@@ -66,7 +66,7 @@ namespace StatTracker_Angular_Mvc.Data
                 {
                     _ctx.Facilities.Remove(facility);
                 }
-                
+
                 return true;
             }
             catch (Exception ex)
@@ -89,6 +89,29 @@ namespace StatTracker_Angular_Mvc.Data
             try
             {
                 _ctx.Rounds.Add(newRound);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // TODO log this error
+                return false;
+            }
+        }
+
+        public bool DeleteRound(int roundId)
+        {
+            try
+            {
+                var round = _ctx.Rounds.Find(roundId);
+                if (round == null)
+                {
+                    throw new HttpResponseException(HttpStatusCode.NotFound);
+                }
+                else
+                {
+                    _ctx.Rounds.Remove(round);
+                }
+
                 return true;
             }
             catch (Exception ex)
