@@ -14,15 +14,23 @@
                 <div class="row round">
                     <div class="well span9">
                         <h4 class="well-title" ng-click="showRoundDetails = ! showRoundDetails">
-                            <!--ng-click="getRoundDetailsById(round.roundId)"-->
                             Round ID: {{round.roundId}} <a style="float: right" ng-click="deleteRound(round)">Remove</a>
+                            Facility ID: {{round.facilityId}}<br/>
+                            Course ID: {{round.courseId}} | Tee ID: {{round.teeId}}<br />
+                            Date: {{round.date}}<br />
+                            Score: {{round.score}}
                         </h4>
                         <div ng-class="{ 'hidden': ! showRoundDetails }">
                             <ul class="thumbnails" style="list-style: none">
                                 <li ng-repeat="roundDetail in round.roundDetails">
                                     <div style="list-style: none">
                                         <div class="well span9">
-                                            <h4 class="well-title">Round Detail ID: {{roundDetail.roundDetailId}} <a style="float: right"></a></h4>
+                                            Round Detail ID: {{roundDetail.roundDetailId}}<br/>
+                                            Hole ID: {{roundDetail.holeId}}<br />
+                                            Score: {{roundDetail.score}}<br />
+                                            Putts: {{roundDetail.putts}}<br />
+                                            GIR: {{roundDetail.gir}}<br />
+                                            FIR: {{roundDetail.fir}}
                                             <br />
                                         </div>
                                     </div>
